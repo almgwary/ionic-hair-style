@@ -14,5 +14,22 @@
     If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
   </p>
 
+  <ion-item>
+    <ion-input type="number" placeholder="Flex image size" [(ngModel)]="flexImageSize"></ion-input>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-input type="number" placeholder="Flex border size" [(ngModel)]="flexBorderSize"></ion-input>
+  </ion-item>
+
+
   <button ion-button secondary menuToggle>Toggle Menu</button>
+
+  <gallery [metadataUri]="galleryDataUri"
+           [flexBorderSize]="flexBorderSize"
+           [flexImageSize]="flexImageSize"
+           [galleryName]="galleryName"
+           (viewerChange)="onGalleryViewerChange($event)"></gallery>
+
 </ion-content>
